@@ -1,0 +1,15 @@
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\bin\Debug\Memory Game.exe.config
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\bin\Debug\Memory Game.exe
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\bin\Debug\Memory Game.pdb
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\MainWindow.g.cs
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\App.g.cs
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game_MarkupCompile.cache
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game_MarkupCompile.lref
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\MainWindow.baml
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.g.resources
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory_Game.Properties.Resources.resources
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.csproj.GenerateResource.cache
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.csproj.CoreCompileInputs.cache
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.exe
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.pdb
+C:\Users\Napparkbo\source\repos\Memory Game\Memory Game\obj\Debug\Memory Game.csprojAssemblyReference.cache
