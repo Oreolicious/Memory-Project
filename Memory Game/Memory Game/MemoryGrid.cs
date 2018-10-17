@@ -15,6 +15,8 @@ namespace Memory_Game
     {
         private Grid grid;
         private int rows, cols;
+        private ImageSource[] images = new ImageSource[16];
+
 
         public MemoryGrid(Grid grid, int cols, int rows)
 
@@ -22,6 +24,13 @@ namespace Memory_Game
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
+
+            for (int i = 0; i < 16; i++)  //loop om alle kaartjes aan te roepen (werkt alleen nog maar bij 16 kaarten) 
+            {
+                int imageNr = i % 8 + 1;
+                ImageSource source = new BitmapImage(new Uri("assets/" + imageNr + ".png", UriKind.Relative));
+                images[i] = source;
+            }
             InitializeGameGrid(cols, rows);  //grid aanroepen
             AddImages();
 
@@ -39,9 +48,8 @@ namespace Memory_Game
             }
         }
 
-        private void AddImages ()
+        private void AddImages()
         {
-            List<ImageSource> images = GetImagesList();
             List<int> positions = new List<int>();
             Random rnd = new Random();
 
@@ -49,50 +57,35 @@ namespace Memory_Game
             {
                 for (int row = 0; row < rows; row++)
                 {
-                    positions.Add(Convert.ToInt32(Convert.ToString(row + 1) + Convert.ToString(column + 1))); 
+                    positions.Add(Convert.ToInt32(Convert.ToString(row + 1) + Convert.ToString(column + 1)));
                 }
             }
-            for (int row = 0; row < rows; row++)
+
+            for (int i = 0; i < rows * cols; i++)
             {
-                for (int column = 0; column < cols; column++)
-                {
+                
                     Image backgroundImage = new Image();
                     backgroundImage.Source = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //default kaartje
-                    backgroundImage.Tag = images.First();  //kaart word getagd met de imagesource
-                    images.RemoveAt(0);
+                    backgroundImage.Tag = i;
                     int randompos = rnd.Next(positions.Count);  //pakt een random item uit de lijst van mogelijke posities
                     int randomposres = positions[randompos];
-                    int randomrow = randomposres / 10-1;  //pakt het eerste getal voor rows
-                    int randomcol = randomposres % 10-1;  //pakt het tweede getal voor cols
+                    int randomrow = randomposres / 10 - 1;  //pakt het eerste getal voor rows
+                    int randomcol = randomposres % 10 - 1;  //pakt het tweede getal voor cols
                     positions.RemoveAt(randompos);  //haalt de positie uit de mogelijke posities omdat hij nu bezet is
                     Grid.SetColumn(backgroundImage, randomcol);
                     Grid.SetRow(backgroundImage, randomrow);
                     grid.Children.Add(backgroundImage);
                     backgroundImage.MouseDown += new MouseButtonEventHandler(CardClick);  //wanneer er word geklikt gaat hij over naar de methode CardClick
-                }
+                
             }
         }
 
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;  //pakt de tag voor de imagesource en stopt het in een variabele
+            ImageSource front = images[(int)card.Tag]; //pakt de tag voor de imagesource en stopt het in een variabele
             card.Source = front;  //veranderd de source van de geklikte kaart naar het toegewezen plaatje
         }
 
-        private List<ImageSource> GetImagesList()
-        {
-            //TODO mogelijkheid veranderen kaarten?
-            List<ImageSource> images = new List<ImageSource>();
-            for (int i = 0; i < 16; i++)  //loop om alle kaartjes aan te roepen (werkt alleen nog maar bij 16 kaarten) 
-            {
-                int imageNr = i % 8 + 1;
-                ImageSource source = new BitmapImage(new Uri("assets/" + imageNr + ".png", UriKind.Relative)); 
-                images.Add(source);
-            }
-            return images;  //geeft lijst met alle plaatjes terug
-        }
-
-        //opmerking: heb nu alle kaarten genummerd voor duidelijkheid
     }
 }
