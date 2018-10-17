@@ -1,0 +1,82 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="HomeGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/AchtergrondHoofdmenu.jpeg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="GameGrid" Grid.Row="1" Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/WitVlakHoofdmenu.jpeg"/>
+            </Grid.Background>
+            <Grid x:Name="MenuGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="VolwassenversieGrid" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="VolwassenversieButtonGrid" Grid.Column="1">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Images/VolwassenversieButton.jpeg"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+                <Grid x:Name="KinderversieGrid" Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="KinderversieButtonGrid" Grid.Column="1">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Images/KinderversieButton.jpeg"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+                <Grid x:Name="HighscoreGrid" Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="HighscoreButtonGrid" Grid.Column="1">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Images/HighscoreButton.jpeg"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid x:Name="LogoGrid" Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/LogoHoofdmenu.jpeg"/>
+            </Grid.Background>
+        </Grid>
+
+    </Grid>
+</Window>
