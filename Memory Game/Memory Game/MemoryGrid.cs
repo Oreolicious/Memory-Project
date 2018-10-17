@@ -15,15 +15,18 @@ namespace Memory_Game
     {
         private Grid grid;
         private int rows, cols;
-        private ImageSource[] images = new ImageSource[16];
+        private ImageSource[] images = new ImageSource[16]; //array images
+        private int previouscard;
+        private int cardsselected;
 
 
         public MemoryGrid(Grid grid, int cols, int rows)
-
         {
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
+            this.previouscard = 0;
+            this.cardsselected = 0;
 
             for (int i = 0; i < 16; i++)  //loop om alle kaartjes aan te roepen (werkt alleen nog maar bij 16 kaarten) 
             {
@@ -82,9 +85,36 @@ namespace Memory_Game
 
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
+            cardsselected++;
             Image card = (Image)sender;
+
             ImageSource front = images[(int)card.Tag]; //pakt de tag voor de imagesource en stopt het in een variabele
-            card.Source = front;  //veranderd de source van de geklikte kaart naar het toegewezen plaatje
+            card.Source = front;  //verandert de source van de geklikte kaart naar het toegewezen plaatje
+
+            if (cardsselected == 2) 
+            {
+                if(previouscard != (int)card.Tag)
+                {
+                    if(card.Source.ToString() == images[previouscard].ToString())
+                    {
+                        Console.WriteLine("Setje gevonden!");
+                    }
+                    else
+                    {
+                        Console.WriteLine(card.Source.ToString()); // voor nu (om te zien wat de tweede kaart is)
+                        ImageSource back = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //pakt de source van de achterkant van de kaart
+
+                        card.Source = back; //draait huidige kaart terug
+
+                        Image previousImage = (Image)grid.Children[previouscard]; // draait de vorige kaart terug
+                        previousImage.Source = back;
+                    }
+                }
+
+                cardsselected = 0;
+            }
+         
+            previouscard = (int)card.Tag;
         }
 
     }

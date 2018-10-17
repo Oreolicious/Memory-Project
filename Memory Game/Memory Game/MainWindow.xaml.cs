@@ -27,6 +27,7 @@ namespace Memory_Game
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
+
         }
     }
 }
