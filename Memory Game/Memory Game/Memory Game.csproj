@@ -96,15 +96,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Plaatjes\1.png" />
-    <Resource Include="Plaatjes\2.png" />
-    <Resource Include="Plaatjes\3.png" />
-    <Resource Include="Plaatjes\4.png" />
-    <Resource Include="Plaatjes\5.png" />
-    <Resource Include="Plaatjes\6.png" />
-    <Resource Include="Plaatjes\7.png" />
-    <Resource Include="Plaatjes\8.png" />
-    <Resource Include="Plaatjes\9.png" />
+    <Resource Include="assets\1.png" />
+    <Resource Include="assets\2.png" />
+    <Resource Include="assets\3.png" />
+    <Resource Include="assets\4.png" />
+    <Resource Include="assets\5.png" />
+    <Resource Include="assets\6.png" />
+    <Resource Include="assets\7.png" />
+    <Resource Include="assets\8.png" />
+    <Resource Include="assets\Card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

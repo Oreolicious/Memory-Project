@@ -22,7 +22,7 @@ namespace Memory_Game
             this.grid = grid;
             this.cols = cols;
             this.rows = rows;
-            InitializeGameGrid(cols, rows); //grid aanroepen
+            InitializeGameGrid(cols, rows);  //grid aanroepen
             AddImages();
 
         }
@@ -42,45 +42,57 @@ namespace Memory_Game
         private void AddImages ()
         {
             List<ImageSource> images = GetImagesList();
+            List<int> positions = new List<int>();
+            Random rnd = new Random();
+
+            for (int column = 0; column < cols; column++)  //loop voor alle mogelijke posities op de grid (max range cols = 1-9 & max range rows = 1-9)
+            {
+                for (int row = 0; row < rows; row++)
+                {
+                    positions.Add(Convert.ToInt32(Convert.ToString(row + 1) + Convert.ToString(column + 1))); 
+                }
+            }
             for (int row = 0; row < rows; row++)
             {
                 for (int column = 0; column < cols; column++)
                 {
                     Image backgroundImage = new Image();
-                    backgroundImage.Source = new BitmapImage(new Uri("Plaatjes/1.png", UriKind.Relative));
-                    backgroundImage.Tag = images.First();
+                    backgroundImage.Source = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //default kaartje
+                    backgroundImage.Tag = images.First();  //kaart word getagd met de imagesource
                     images.RemoveAt(0);
-
-                    backgroundImage.MouseDown += new MouseButtonEventHandler(CardClick); //deze code zorgt ervoor dat je op de kaart kunt klikken               
-                    Grid.SetColumn(backgroundImage, column);
-                    Grid.SetRow(backgroundImage, row);
+                    int randompos = rnd.Next(positions.Count);  //pakt een random item uit de lijst van mogelijke posities
+                    int randomposres = positions[randompos];
+                    int randomrow = randomposres / 10-1;  //pakt het eerste getal voor rows
+                    int randomcol = randomposres % 10-1;  //pakt het tweede getal voor cols
+                    positions.RemoveAt(randompos);  //haalt de positie uit de mogelijke posities omdat hij nu bezet is
+                    Grid.SetColumn(backgroundImage, randomcol);
+                    Grid.SetRow(backgroundImage, randomrow);
                     grid.Children.Add(backgroundImage);
-
+                    backgroundImage.MouseDown += new MouseButtonEventHandler(CardClick);  //wanneer er word geklikt gaat hij over naar de methode CardClick
                 }
-
             }
         }
 
         private void CardClick(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
-            ImageSource front = (ImageSource)card.Tag;
-            card.Source = front;
+            ImageSource front = (ImageSource)card.Tag;  //pakt de tag voor de imagesource en stopt het in een variabele
+            card.Source = front;  //veranderd de source van de geklikte kaart naar het toegewezen plaatje
         }
 
         private List<ImageSource> GetImagesList()
         {
+            //TODO mogelijkheid veranderen kaarten?
             List<ImageSource> images = new List<ImageSource>();
-            for (int i = 0; i < 16; i++)
+            for (int i = 0; i < 16; i++)  //loop om alle kaartjes aan te roepen (werkt alleen nog maar bij 16 kaarten) 
             {
                 int imageNr = i % 8 + 1;
-                ImageSource source = new BitmapImage(new Uri("plaatjes/" + imageNr + ".png", UriKind.Relative)); //haalt alle plaatjes uit de map
+                ImageSource source = new BitmapImage(new Uri("assets/" + imageNr + ".png", UriKind.Relative)); 
                 images.Add(source);
             }
-            //TODO randomize volgorde
-            return images;
+            return images;  //geeft lijst met alle plaatjes terug
         }
 
-        //opmerking betreft kaartjes: ik heb twee kaartjes uit kinderversie gepakt om te testen, gezien ik deze op mijn computer had. 
+        //opmerking: heb nu alle kaarten genummerd voor duidelijkheid
     }
 }

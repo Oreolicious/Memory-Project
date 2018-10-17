@@ -20,19 +20,13 @@ namespace Memory_Game
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const int NR_OF_COLS = 4;
-        private const int NR_OF_ROWS = 4;
+        private const int NR_OF_COLS = 8;
+        private const int NR_OF_ROWS = 2;
         MemoryGrid grid;
-
-
         public MainWindow()
         {
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
         }
-
-   
-        
-
     }
 }
