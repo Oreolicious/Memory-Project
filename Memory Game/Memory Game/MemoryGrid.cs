@@ -8,6 +8,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Media;
+using System.IO;
 
 namespace Memory_Game
 {
@@ -78,18 +80,24 @@ namespace Memory_Game
                     Grid.SetColumn(backgroundImage, randomcol);
                     Grid.SetRow(backgroundImage, randomrow);
                     grid.Children.Add(backgroundImage);
-                    backgroundImage.MouseDown += new MouseButtonEventHandler(CardClick);  //wanneer er word geklikt gaat hij over naar de methode CardClick
-                
+                    backgroundImage.MouseDown += new MouseButtonEventHandler(CardClickAsync);  //wanneer er word geklikt gaat hij over naar de methode CardClick
             }
         }
-
-        private void CardClick(object sender, MouseButtonEventArgs e)
+        private async void CardClickAsync(object sender, MouseButtonEventArgs e)
         {
-            cardsselected++;
             Image card = (Image)sender;
+            if (cardsselected > 1) //zorgt dat de methode stopt als meer dan 2 kaarten worden geklikt
+            {
+                return;
+            }
+
+            if (card.Source.ToString() == "pack://application:,,,/assets/Card.png")  //laat alleen een kaartselectie toe wanneer de kaart nog niet is omgedraait
+            {
+                cardsselected++;
+            }
 
             ImageSource front = images[(int)card.Tag]; //pakt de tag voor de imagesource en stopt het in een variabele
-            card.Source = front;  //verandert de source van de geklikte kaart naar het toegewezen plaatje
+            card.Source = front;  //verandert de source van de geklikte kaart naar het toegewezen plaatje 
 
             if (cardsselected == 2) 
             {
@@ -101,21 +109,18 @@ namespace Memory_Game
                     }
                     else
                     {
-                        Console.WriteLine(card.Source.ToString()); // voor nu (om te zien wat de tweede kaart is)
+                        await Task.Delay(1000);
                         ImageSource back = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //pakt de source van de achterkant van de kaart
 
                         card.Source = back; //draait huidige kaart terug
 
-                        Image previousImage = (Image)grid.Children[previouscard]; // draait de vorige kaart terug
+                        Image previousImage = (Image)grid.Children[previouscard]; //draait de vorige kaart terug
                         previousImage.Source = back;
                     }
                 }
-
                 cardsselected = 0;
             }
-         
             previouscard = (int)card.Tag;
         }
-
     }
 }
