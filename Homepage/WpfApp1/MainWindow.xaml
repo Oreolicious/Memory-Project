@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="HomeGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Images/AchtergrondHoofdmenu.jpeg"/>
+            <ImageBrush ImageSource="Images/Achtergrond.jpeg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="GameGrid" Grid.Row="1" Grid.Column="1">
             <Grid.Background>
-                <ImageBrush ImageSource="Images/WitVlakHoofdmenu.jpeg"/>
+                <ImageBrush ImageSource="Images/WitVlak.jpeg"/>
             </Grid.Background>
             <Grid x:Name="MenuGrid">
                 <Grid.RowDefinitions>
@@ -40,7 +40,7 @@
                         <ColumnDefinition Width="7*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Grid x:Name="VolwassenversieButtonGrid" Grid.Column="1">
+                    <Grid x:Name="VolwassenversieButtonGrid" Grid.Column="1" MouseDown="VolwassenversieButtonGrid_MouseDown">
                         <Grid.Background>
                             <ImageBrush ImageSource="Images/VolwassenversieButton.jpeg"/>
                         </Grid.Background>
@@ -52,7 +52,7 @@
                         <ColumnDefinition Width="7*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Grid x:Name="KinderversieButtonGrid" Grid.Column="1">
+                    <Grid x:Name="KinderversieButtonGrid" Grid.Column="1" MouseDown="KinderversieButtonGrid_MouseDown">
                         <Grid.Background>
                             <ImageBrush ImageSource="Images/KinderversieButton.jpeg"/>
                         </Grid.Background>
@@ -64,7 +64,7 @@
                         <ColumnDefinition Width="7*"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Grid x:Name="HighscoreButtonGrid" Grid.Column="1">
+                    <Grid x:Name="HighscoreButtonGrid" Grid.Column="1" MouseDown="HighscoreButtonGrid_MouseDown">
                         <Grid.Background>
                             <ImageBrush ImageSource="Images/HighscoreButton.jpeg"/>
                         </Grid.Background>
@@ -74,7 +74,7 @@
         </Grid>
         <Grid x:Name="LogoGrid" Grid.Column="1">
             <Grid.Background>
-                <ImageBrush ImageSource="Images/LogoHoofdmenu.jpeg"/>
+                <ImageBrush ImageSource="Images/Logo.jpeg"/>
             </Grid.Background>
         </Grid>
 

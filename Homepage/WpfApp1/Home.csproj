@@ -96,16 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\WitVlakHoofdmenu.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\AchtergrondHoofdmenu.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\ButtonHoofdmenu.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\LogoHoofdmenu.jpeg" />
+    <Resource Include="Images\Achtergrond.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\HighscoreButton.jpeg" />
@@ -114,7 +105,13 @@
     <Resource Include="Images\KinderversieButton.jpeg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Logo.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\VolwassenversieButton.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WitVlak.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
