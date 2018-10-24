@@ -27,12 +27,12 @@ namespace MemoryGame
 
         private void SpelHervattenGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            //do something here
         }
 
         private void NaarHoofdmenuGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Homepage());
         }
     }
 }

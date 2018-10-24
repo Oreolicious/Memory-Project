@@ -28,5 +28,15 @@ namespace MemoryGame
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
         }
+
+        private void Pauzebutton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Pauze_menu());
+        }
+
+        private void Terugbutton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Homepage());
+        }
     }
 }

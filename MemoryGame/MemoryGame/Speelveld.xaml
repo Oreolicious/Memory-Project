@@ -33,15 +33,39 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="Terugbutton" Grid.Column="0" Grid.Row="1">
-                <Grid.Background>
-                    <ImageBrush ImageSource="assets/Terugbutton.png"/>
-                </Grid.Background>
+            <Grid x:Name="VerdelingTerugButtonGrid" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="Terugbutton" Grid.Column="1" Grid.Row="1" MouseDown="Terugbutton_MouseDown">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="assets/Terugbutton.png"/>
+                    </Grid.Background>
+                </Grid>
             </Grid>
-            <Grid x:Name="Pauzebutton" Grid.Column="6" Grid.Row="1">
-                <Grid.Background>
-                    <ImageBrush ImageSource="assets/Pauzebutton.png"/>
-                </Grid.Background>
+            <Grid x:Name="VerdelingPauzeButtonGrid" Grid.Row="1" Grid.Column="6">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="Pauzebutton" Grid.Column="1" Grid.Row="1" MouseDown="Pauzebutton_MouseDown">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="assets/Pauzebutton.png"/>
+                    </Grid.Background>
+                </Grid>
             </Grid>
             <Grid x:Name="Timer" Grid.Column="3" Grid.Row="1">
                 <Grid.RowDefinitions>
