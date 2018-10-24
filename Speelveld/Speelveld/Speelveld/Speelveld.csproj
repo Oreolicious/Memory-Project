@@ -107,6 +107,9 @@
     <Resource Include="assets\Terugbutton.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="assets\Card.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="assets\1.png" />
     <Resource Include="assets\2.png" />
     <Resource Include="assets\3.png" />
@@ -115,7 +118,6 @@
     <Resource Include="assets\6.png" />
     <Resource Include="assets\7.png" />
     <Resource Include="assets\8.png" />
-    <Resource Include="assets\Card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
