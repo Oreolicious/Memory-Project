@@ -20,7 +20,10 @@ namespace MemoryGame
         private ImageSource[] images = new ImageSource[16]; //array images
         private int previouscard;
         private int cardsselected;
-
+        private int speler;
+        private int[] score = new int[2];
+        private bool win = false;
+        internal Action OnUpdate;
 
         public MemoryGrid(Grid grid, int cols, int rows)
         {
@@ -38,7 +41,10 @@ namespace MemoryGame
             }
             InitializeGameGrid(cols, rows);  //grid aanroepen
             AddImages();
-
+            win = false;
+            speler = 1;
+            score[0] = 0;
+            score[1] = 0;
         }
 
         private void InitializeGameGrid(int cols, int rows) //grid aanmaken en vullen
@@ -101,11 +107,20 @@ namespace MemoryGame
 
             if (cardsselected == 2)
             {
+                bool geraden = false;
                 if (previouscard != (int)card.Tag)
                 {
                     if (card.Source.ToString() == images[previouscard].ToString())
                     {
-                        Console.WriteLine("Setje gevonden!");
+                        if(speler == 1)
+                        {
+                            score[0] += 100;
+                        }
+                        else
+                        {
+                            score[1] += 100;
+                        }
+                        geraden = true;
                     }
                     else
                     {
@@ -119,8 +134,32 @@ namespace MemoryGame
                     }
                 }
                 cardsselected = 0;
+                if(geraden == false)
+                {
+                    if (speler == 1)
+                    {
+                        speler = 2;
+                    }
+                    else
+                    {
+                        speler = 1;
+                    }
+                }
+                OnUpdate();
             }
             previouscard = (int)card.Tag;
+        }
+        public int GetCurPlayer()
+        {
+            return this.speler;
+        }
+        public int GetPlayerScore(int player)
+        {
+            return this.score[player];
+        }
+        public bool IsDone()
+        {
+            return this.win;
         }
     }
 }

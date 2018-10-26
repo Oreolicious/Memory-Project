@@ -27,7 +27,7 @@ namespace MemoryGame
 
         private void SpelHervattenGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //do something here
+            this.NavigationService.GoBack();
         }
 
         private void NaarHoofdmenuGrid_MouseDown(object sender, MouseButtonEventArgs e)
