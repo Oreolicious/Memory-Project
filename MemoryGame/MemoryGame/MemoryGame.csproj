@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Highscore scherm.xaml.cs">
+      <DependentUpon>Highscore scherm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pauze menu.xaml.cs">
       <DependentUpon>Pauze menu.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,10 @@
     <Compile Include="Win scherm.xaml.cs">
       <DependentUpon>Win scherm.xaml</DependentUpon>
     </Compile>
+    <Page Include="Highscore scherm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Homepage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -154,14 +161,6 @@
     <Resource Include="Images\WitVlakPauze.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="assets\1.png" />
-    <Resource Include="assets\2.png" />
-    <Resource Include="assets\3.png" />
-    <Resource Include="assets\4.png" />
-    <Resource Include="assets\5.png" />
-    <Resource Include="assets\6.png" />
-    <Resource Include="assets\7.png" />
-    <Resource Include="assets\8.png" />
     <Resource Include="assets\Backgroundspeelveld.png" />
     <Resource Include="assets\balkSpeelV.png" />
     <Resource Include="assets\beurtSpeelV.png" />
@@ -170,6 +169,22 @@
     <Resource Include="assets\Pauzebutton.png" />
     <Resource Include="assets\Terugbutton.png" />
     <Resource Include="assets\timerbuttonSpeelV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AchtergrondHighscorescherm.jpeg" />
+    <Resource Include="Images\LogoHighscorescherm.jpeg" />
+    <Resource Include="Images\TerugButtonHighscorescherm.jpeg" />
+    <Resource Include="Images\WitVlakHighscorescherm.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\1.png" />
+    <Resource Include="assets\2.png" />
+    <Resource Include="assets\3.png" />
+    <Resource Include="assets\4.png" />
+    <Resource Include="assets\5.png" />
+    <Resource Include="assets\6.png" />
+    <Resource Include="assets\7.png" />
+    <Resource Include="assets\8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -101,6 +101,10 @@ namespace MemoryGame
             {
                 cardsselected++;
             }
+            else
+            {
+                return;
+            }
 
             ImageSource front = images[(int)card.Tag]; //pakt de tag voor de imagesource en stopt het in een variabele
             card.Source = front;  //verandert de source van de geklikte kaart naar het toegewezen plaatje 

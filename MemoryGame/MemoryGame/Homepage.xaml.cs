@@ -35,7 +35,7 @@ namespace MemoryGame
 
         private void Highscorebutton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //do something here
+            this.NavigationService.Navigate(new Highscore_scherm());
         }
     }
 }
