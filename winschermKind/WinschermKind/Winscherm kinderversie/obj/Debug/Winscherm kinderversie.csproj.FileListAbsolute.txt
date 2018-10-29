@@ -13,3 +13,18 @@ E:\Users\Buffel\source\repos\Winscherm kinderversie\Winscherm kinderversie\obj\D
 E:\Users\Buffel\source\repos\Winscherm kinderversie\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.csproj.CoreCompileInputs.cache
 E:\Users\Buffel\source\repos\Winscherm kinderversie\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.exe
 E:\Users\Buffel\source\repos\Winscherm kinderversie\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.pdb
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\bin\Debug\Winscherm kinderversie.exe.config
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\bin\Debug\Winscherm kinderversie.exe
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\bin\Debug\Winscherm kinderversie.pdb
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.csprojAssemblyReference.cache
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\MainWindow.g.cs
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\App.g.cs
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie_MarkupCompile.cache
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie_MarkupCompile.lref
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\MainWindow.baml
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.g.resources
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm_kinderversie.Properties.Resources.resources
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.csproj.GenerateResource.cache
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.csproj.CoreCompileInputs.cache
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.exe
+C:\Users\Napparkbo\Documents\GitHub\Memory-Project\winschermKind\WinschermKind\Winscherm kinderversie\obj\Debug\Winscherm kinderversie.pdb
