@@ -1,0 +1,57 @@
+﻿<Page x:Class="MemoryGame.Kindwinscherm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="675" Width="1200">
+    <Grid x:Name="AchtergrondGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.7*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/achtergrondKind.png"/>
+        </Grid.Background>
+        <Grid x:Name="witvlakGrid" Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/wolkKind.png"/>
+            </Grid.Background>
+            <Grid x:Name="nieuwspelGrid" Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="94*"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="43*"/>
+                    <ColumnDefinition Width="33*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Images/opnieuwKind.png"/>
+                </Grid.Background>
+
+            </Grid>
+            <Grid x:Name="buttonHoofdmenu" Grid.Row="1" Grid.Column="1" Margin="8,0,2,0">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Images/hoofdmenuKind.png"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

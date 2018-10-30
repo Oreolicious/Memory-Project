@@ -58,6 +58,8 @@
     <Compile Include="Highscore scherm.xaml.cs">
       <DependentUpon>Highscore scherm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kinderspeelveld.cs" />
+    <Compile Include="Kindwinscherm.cs" />
     <Compile Include="Pauze menu.xaml.cs">
       <DependentUpon>Pauze menu.xaml</DependentUpon>
     </Compile>
@@ -76,6 +78,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Invoer scherm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Kinderspeelveld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Kindwinscherm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -185,6 +195,21 @@
     <Resource Include="assets\6.png" />
     <Resource Include="assets\7.png" />
     <Resource Include="assets\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\achtergrondKind.png" />
+    <Resource Include="Images\achtergrondKindwin.png" />
+    <Resource Include="Images\hart.png" />
+    <Resource Include="Images\hoofdmenuKind.png" />
+    <Resource Include="Images\maan.png" />
+    <Resource Include="Images\opnieuwKind.png" />
+    <Resource Include="Images\ster.png" />
+    <Resource Include="Images\wolk.png" />
+    <Resource Include="Images\wolkKind.png" />
+    <Resource Include="Images\zon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\terugButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

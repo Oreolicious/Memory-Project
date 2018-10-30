@@ -30,7 +30,7 @@ namespace MemoryGame
         }
         private void Kinderbutton_MouseDown(object sender, MouseEventArgs e)
         {
-            //do something here
+            this.NavigationService.Navigate(new Kinderspeelveld());
         }
 
         private void Highscorebutton_MouseDown(object sender, MouseButtonEventArgs e)
