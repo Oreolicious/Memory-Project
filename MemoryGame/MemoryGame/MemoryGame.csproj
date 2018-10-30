@@ -148,7 +148,6 @@
   <ItemGroup>
     <Resource Include="Images\Achtergrond.jpeg" />
     <Resource Include="Images\AchtergrondHoofdmenu.jpeg" />
-    <Resource Include="Images\AchtergrondPauze.jpeg" />
     <Resource Include="Images\Achtergrondwin.jpeg" />
     <Resource Include="Images\ButtonHoofdmenu.jpeg" />
     <Resource Include="Images\GrootWitVlak.jpeg" />
@@ -212,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\achtergrondKindWin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\achtergrondPauze.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

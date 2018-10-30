@@ -8,7 +8,7 @@
         Title="MainWindow" Height="675" Width="1200">
     <Grid x:Name="AchtergrondGrid">
         <Grid.Background>
-            <ImageBrush ImageSource="Images/Achtergrondpauze.jpeg"/>
+            <ImageBrush ImageSource="Images/achtergrondPauze.png"/>
         </Grid.Background>
         <Grid x:Name="VerdelingWitVlakGrid">
             <Grid.RowDefinitions>
