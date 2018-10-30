@@ -20,9 +20,16 @@ namespace MemoryGame
     /// </summary>
     public partial class Kinderspeelveld : Page
     {
+        private const int NR_OF_COLS = 5;
+        private const int NR_OF_ROWS = 2;
+        public string Naam1 { get; set; }
+        public string Naam2 { get; set; }
+        MemoryGridKinderen grid;
         public Kinderspeelveld()
         {
+            Invoer_scherm invoer = new Invoer_scherm();
             InitializeComponent();
+            grid = new MemoryGridKinderen(GameGrid, NR_OF_COLS, NR_OF_ROWS);
         }
         private void Terugbutton_MouseDown(object sender, MouseEventArgs e)
         {

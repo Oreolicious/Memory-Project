@@ -13,31 +13,34 @@
         <Grid x:Name="AchtergrondGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition/>
+                <RowDefinition Height="9*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="9*"/>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="9*"/>
-            </Grid.ColumnDefinitions>
-            <Grid x:Name="VerdelingTerugButtonGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="9*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
+            <Grid x:Name="Verdeling0TerugButtonGrid">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="4*"/>
-                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="9*"/>
                 </Grid.ColumnDefinitions>
-                <Grid x:Name="TerugButtonGrid" Grid.Row="1" Grid.Column="1" MouseDown="Terugbutton_MouseDown">
-                    <Grid.Background>
-                        <ImageBrush ImageSource="Images/TerugButton.png"/>
-                    </Grid.Background>
+
+                <Grid x:Name="VerdelingTerugButtonGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="TerugButtonGrid" Grid.Row="1" Grid.Column="1" MouseDown="Terugbutton_MouseDown">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Images/TerugButton.png"/>
+                        </Grid.Background>
+                    </Grid>
                 </Grid>
             </Grid>
+            <Grid x:Name="GameGrid" Grid.Row="1"></Grid>
         </Grid>
     </Grid>
 </Page>
