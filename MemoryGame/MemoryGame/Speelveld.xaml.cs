@@ -50,7 +50,7 @@ namespace MemoryGame
             else
             {
                 Spelerbeurt1.Visibility = Visibility.Hidden;
-                Spelerbeurt2.Visibility = Visibility.Visible;
+                Spelerbeurt2.Visibility = Visibility.Visible;  
             }
             Speler1score.Text = grid.GetPlayerScore(0).ToString();
             Speler2score.Text = grid.GetPlayerScore(1).ToString(); ;
