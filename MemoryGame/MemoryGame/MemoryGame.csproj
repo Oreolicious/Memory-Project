@@ -198,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\achtergrondKind.png" />
-    <Resource Include="Images\achtergrondKindwin.png" />
     <Resource Include="Images\hart.png" />
     <Resource Include="Images\hoofdmenuKind.png" />
     <Resource Include="Images\maan.png" />
@@ -210,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\terugButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\achtergrondKindWin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
