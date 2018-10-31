@@ -25,6 +25,12 @@ namespace MemoryGame
         private bool win = false;
         internal Action OnUpdate;
 
+        /// <summary>
+        /// Roept de MemoryGrid class aan en zorgt ervoor dat het speelveld gaat werken
+        /// </summary>
+        /// <param name="grid">De naam van de grid waar het speelveld in word aangemaakt</param>
+        /// <param name="cols">Het aantal columns in de grid</param>
+        /// <param name="rows">Het aantal rows in de grid</param>
         public MemoryGrid(Grid grid, int cols, int rows)
         {
             this.grid = grid;
@@ -46,7 +52,11 @@ namespace MemoryGame
             score[0] = 0;
             score[1] = 0;
         }
-
+        /// <summary>
+        /// Maakt de grid rows en columns aan
+        /// </summary>
+        /// <param name="cols">Het aantal columns in het speelveld</param>
+        /// <param name="rows">Het aantal rows in het speelveld</param>
         private void InitializeGameGrid(int cols, int rows) //grid aanmaken en vullen
         {
             for (int i = 0; i < rows; i++)
@@ -58,7 +68,9 @@ namespace MemoryGame
                 grid.ColumnDefinitions.Add(new ColumnDefinition());
             }
         }
-
+        /// <summary>
+        /// Deze methode positioneerd alle kaarten op het speelveld
+        /// </summary>
         private void AddImages()
         {
             List<int> positions = new List<int>();
@@ -89,6 +101,9 @@ namespace MemoryGame
                 backgroundImage.MouseDown += new MouseButtonEventHandler(CardClickAsync);  //wanneer er word geklikt gaat hij over naar de methode CardClick
             }
         }
+        /// <summary>
+        /// Deze methode word aangeroepen wanneer er op een kaart word geklikt en handeld een cardclick af
+        /// </summary>
         private async void CardClickAsync(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;
@@ -109,26 +124,26 @@ namespace MemoryGame
             ImageSource front = images[(int)card.Tag]; //pakt de tag voor de imagesource en stopt het in een variabele
             card.Source = front;  //verandert de source van de geklikte kaart naar het toegewezen plaatje 
 
-            if (cardsselected == 2)
+            if (cardsselected == 2) //Springt de loop in zodra 2 kaartjes zijn geselecteerd
             {
-                bool geraden = false;
+                bool geraden = false; 
                 if (previouscard != (int)card.Tag)
                 {
-                    if (card.Source.ToString() == images[previouscard].ToString())
+                    if (card.Source.ToString() == images[previouscard].ToString()) //Kijkt of de 2 geselecteerde kaarten gelijk zijn aan eklaar
                     {
-                        if(speler == 1)
+                        if(speler == 1) //kent score aan de speler toe die het paar juist raad
                         {
-                            score[0] += 100;
+                            score[0] += 100; 
                         }
                         else
                         {
                             score[1] += 100;
                         }
-                        geraden = true;
+                        geraden = true; //maakt het variabele geraden true zodat de speler die het geraden heeft nog een keer mag
                     }
                     else
                     {
-                        await Task.Delay(1000);
+                        await Task.Delay(1000); //delay zodat de tweede kaart niet gelijk van het scherm verdwijnt
                         ImageSource back = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //pakt de source van de achterkant van de kaart
 
                         card.Source = back; //draait huidige kaart terug
@@ -138,7 +153,7 @@ namespace MemoryGame
                     }
                 }
                 cardsselected = 0;
-                if(geraden == false)
+                if(geraden == false) //zorgt ervoor dat de speler gewisseld wordt
                 {
                     if (speler == 1)
                     {
@@ -149,18 +164,31 @@ namespace MemoryGame
                         speler = 1;
                     }
                 }
-                OnUpdate();
+                OnUpdate(); //Update de currentplayer en score van bijde spelers
             }
             previouscard = (int)card.Tag;
         }
+        /// <summary>
+        /// Methode om de huidige speler te achterhalen
+        /// </summary>
+        /// <returns>Huidige speler nummer 1 of 2</returns>
         public int GetCurPlayer()
         {
-            return this.speler;
+            return this.speler; 
         }
-        public int GetPlayerScore(int player)
+        /// <summary>
+        /// Methode om de score van een speler op te vragen
+        /// </summary>
+        /// <param name="player">int die 0 is voor speler 1 en 1 is voor speler 2</param>
+        /// <returns>score van opgevraagde speler</returns>
+        public int GetPlayerScore(int player) 
         {
             return this.score[player];
         }
+        /// <summary>
+        /// Methode om te kunnen zien of het spel is afgelopen
+        /// </summary>
+        /// <returns>true or false</returns>
         public bool IsDone()
         {
             return this.win;

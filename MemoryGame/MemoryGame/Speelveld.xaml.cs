@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MemoryGame
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Speelveld.xaml
     /// </summary>
     
     public partial class Speelveld : Page
