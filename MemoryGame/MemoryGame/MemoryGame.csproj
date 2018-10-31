@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Kinderspeelveld.cs" />
     <Compile Include="Kindwinscherm.cs" />
+    <Compile Include="MemoryGridKinderen.cs" />
     <Compile Include="Pauze menu.xaml.cs">
       <DependentUpon>Pauze menu.xaml</DependentUpon>
     </Compile>
@@ -214,6 +215,14 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\achtergrondPauze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\assetskinder\1.png" />
+    <Resource Include="assets\assetskinder\2.png" />
+    <Resource Include="assets\assetskinder\3.png" />
+    <Resource Include="assets\assetskinder\4.png" />
+    <Resource Include="assets\assetskinder\5.png" />
+    <Resource Include="assets\assetskinder\Card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
