@@ -222,6 +222,8 @@
     <Resource Include="assets\assetskinder\3.png" />
     <Resource Include="assets\assetskinder\4.png" />
     <Resource Include="assets\assetskinder\5.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="assets\assetskinder\Card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
