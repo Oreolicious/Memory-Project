@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace MemoryGame
 {
@@ -25,13 +26,17 @@ namespace MemoryGame
         private const int NR_OF_ROWS = 2;
         public string Naam1 { get; set; }
         public string Naam2 { get; set; }
+        public string TimerTijd { get; set; }
         MemoryGrid grid;
+        MemoryTimer timer;
         public Speelveld()
         {
             Invoer_scherm invoer = new Invoer_scherm();
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
             grid.OnUpdate += OnUpdate;
+            timer = new MemoryTimer(180);
+            timer.OnTimerUpdate += OnTimerUpdate;
             OnUpdate();
             Loaded += MyWindow_Loaded;
         }
@@ -59,6 +64,14 @@ namespace MemoryGame
                 await Task.Delay(1000);
                 this.NavigationService.Navigate(new Win_scherm());
             }
+        }
+        public void OnTimerUpdate()
+        {
+            this.Dispatcher.Invoke(() => //uitzoeken
+            {
+                Tijd.Text = timer.SpeelveldTijd;
+                //if statement plaatsen timer.speelveldtijd == 00:00 dan terug na winscherm // zonder delay?
+            });
         }
         public void NameInit()
         {

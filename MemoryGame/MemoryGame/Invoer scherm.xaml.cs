@@ -44,8 +44,8 @@ namespace MemoryGame
         private void StartButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Speelveld Speel = new Speelveld();
-            this.NavigationService.Navigate(Speel = new Speelveld());
-            if(Speler1naam.Text == "")
+            this.NavigationService.Navigate(Speel);
+            if (Speler1naam.Text == "")
             {
                 Speel.Naam1 = "Speler 1";
             }
