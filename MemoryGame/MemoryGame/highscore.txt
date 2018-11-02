@@ -1,0 +1,3 @@
+Maxime,600
+Pascha,400
+Daniel,200

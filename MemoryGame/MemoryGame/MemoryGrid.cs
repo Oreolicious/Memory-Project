@@ -22,6 +22,7 @@ namespace MemoryGame
         private int cardsselected;
         private int speler;
         private int[] score = new int[2];
+        private string[] namen = new string[2];
         private bool win = false;
         private int GeradenKaartjes;
         internal Action OnUpdate;
@@ -32,7 +33,7 @@ namespace MemoryGame
         /// <param name="grid">De naam van de grid waar het speelveld in word aangemaakt</param>
         /// <param name="cols">Het aantal columns in de grid</param>
         /// <param name="rows">Het aantal rows in de grid</param>
-        public MemoryGrid(Grid grid, int cols, int rows)
+        public MemoryGrid(Grid grid, int cols, int rows, string naam_1, string naam_2)
         {
             this.grid = grid;
             this.cols = cols;
@@ -52,6 +53,9 @@ namespace MemoryGame
             speler = 1;
             score[0] = 0;
             score[1] = 0;
+            namen[0] = naam_1;
+            namen[1] = naam_2;
+            Console.WriteLine("Name: " + namen[0] + namen[1]);
             GeradenKaartjes = 0;
         }
         /// <summary>
@@ -128,7 +132,7 @@ namespace MemoryGame
 
             if (cardsselected == 2) //Springt de loop in zodra 2 kaartjes zijn geselecteerd
             {
-                bool geraden = false; 
+                bool geraden = false;
                 if (previouscard != (int)card.Tag)
                 {
                     if (card.Source.ToString() == images[previouscard].ToString()) //Kijkt of de 2 geselecteerde kaarten gelijk zijn aan eklaar
@@ -149,13 +153,37 @@ namespace MemoryGame
                     }
                 }
                 cardsselected = 0;
-                if(geraden == false) //zorgt ervoor dat de speler gewisseld wordt
-                {            
+                if (geraden == false) //zorgt ervoor dat de speler gewisseld wordt
+                {
                     speler = speler == 1 ? 2 : 1;
                 }
+
                 IsDone();
-                OnUpdate(); //Update de currentplayer en score van bijde spelers
-                
+
+                if (win)
+                {
+                    var file = new Uri("../../highscore.txt", UriKind.Relative);
+                    List<string> lines = File.ReadAllLines(file.ToString()).ToList();
+
+                    for (int j = 0; j < 2; j++)
+                    {
+                        for (int i = 0; i < 3; i++)
+                        {
+                            string[] entry = lines[i].Split(',');
+
+                            if (score[j] > Int32.Parse(entry[1]))
+                            {
+                                lines.Insert(i, namen[j] + "," + score[j].ToString());
+                                break;
+                            }
+                        }
+                    }
+
+                    File.WriteAllLines(file.ToString(), lines.Take(3));
+                }
+
+                OnUpdate(); //Update de currentplayer en score van beide spelers
+
             }
             previouscard = (int)card.Tag;
         }
@@ -165,14 +193,14 @@ namespace MemoryGame
         /// <returns>Huidige speler nummer 1 of 2</returns>
         public int GetCurPlayer()
         {
-            return this.speler; 
+            return this.speler;
         }
         /// <summary>
         /// Methode om de score van een speler op te vragen
         /// </summary>
         /// <param name="player">int die 0 is voor speler 1 en 1 is voor speler 2</param>
         /// <returns>score van opgevraagde speler</returns>
-        public int GetPlayerScore(int player) 
+        public int GetPlayerScore(int player)
         {
             return this.score[player];
         }

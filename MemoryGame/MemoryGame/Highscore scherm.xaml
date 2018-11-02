@@ -46,6 +46,18 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images/WitVlakhighscorescherm.jpeg"/>
             </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" Name="score_1" FontFamily="American Purpose"/>
+            <TextBlock FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2" Name="score_2" FontFamily="American Purpose"/>
+            <TextBlock FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3" Name="score_3" FontFamily="American Purpose"/>
         </Grid>
     </Grid>
 </Page>

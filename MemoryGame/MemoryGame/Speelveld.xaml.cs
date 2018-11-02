@@ -24,16 +24,17 @@ namespace MemoryGame
     {
         private const int NR_OF_COLS = 8;
         private const int NR_OF_ROWS = 2;
-        public string Naam1 { get; set; }
-        public string Naam2 { get; set; }
+        private string Naam1;
+        private string Naam2;
         public string TimerTijd { get; set; }
         MemoryGrid grid;
         MemoryTimer timer;
-        public Speelveld()
+        public Speelveld(string naam_1, string naam_2)
         {
-            Invoer_scherm invoer = new Invoer_scherm();
+            Naam1 = naam_1;
+            Naam2 = naam_2;
             InitializeComponent();
-            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS);
+            grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, Naam1, Naam2);
             grid.OnUpdate += OnUpdate;
             timer = new MemoryTimer(180);
             timer.OnTimerUpdate += OnTimerUpdate;

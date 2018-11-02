@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace MemoryGame
 {
@@ -23,6 +24,32 @@ namespace MemoryGame
         public Highscore_scherm()
         {
             InitializeComponent();
+
+            var file = new Uri("../../highscore.txt", UriKind.Relative);
+            string[] lines = File.ReadAllLines(file.ToString());
+
+            for (int i = 0; i < 3; i++)
+            {
+                string[] entry = lines[i].Split(',');
+
+                switch (i)
+                {
+                    case 0:
+                        score_1.Text = entry[0] + ": " + entry[1];
+                        break;
+
+                    case 1:
+                        score_2.Text = entry[0] + ": " + entry[1];
+                        break;
+
+                    case 2:
+                        score_3.Text = entry[0] + ": " + entry[1];
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
 
         private void TerugButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)

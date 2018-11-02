@@ -43,24 +43,27 @@ namespace MemoryGame
 
         private void StartButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Speelveld Speel = new Speelveld();
-            this.NavigationService.Navigate(Speel);
+            string naam_1, naam_2;
+
             if (Speler1naam.Text == "")
             {
-                Speel.Naam1 = "Speler 1";
+                naam_1 = "Speler 1";
             }
             else
             {
-                Speel.Naam1 = Speler1naam.Text;
+                naam_1 = Speler1naam.Text;
             }
             if (Speler2naam.Text == "")
             {
-                Speel.Naam2 = "Speler 2";
+                naam_2 = "Speler 2";
             }
             else
             {
-                Speel.Naam2 = Speler2naam.Text;
+                naam_2 = Speler2naam.Text;
             }
+
+            Speelveld Speel = new Speelveld(naam_1, naam_2);
+            this.NavigationService.Navigate(Speel);
         }
     }
 }
