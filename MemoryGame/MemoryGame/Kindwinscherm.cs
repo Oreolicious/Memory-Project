@@ -25,7 +25,7 @@ namespace MemoryGame
             InitializeComponent();
         }
 
-        private void HoofdmenuButtonGrid(object sender, MouseButtonEventArgs e)
+        private void HoofdmenuButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.NavigationService.Navigate(new Homepage());
         }

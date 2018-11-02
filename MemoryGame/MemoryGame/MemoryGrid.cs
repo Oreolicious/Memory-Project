@@ -23,6 +23,7 @@ namespace MemoryGame
         private int speler;
         private int[] score = new int[2];
         private bool win = false;
+        private int GeradenKaartjes;
         internal Action OnUpdate;
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace MemoryGame
             speler = 1;
             score[0] = 0;
             score[1] = 0;
+            GeradenKaartjes = 0;
         }
         /// <summary>
         /// Maakt de grid rows en columns aan
@@ -132,7 +134,7 @@ namespace MemoryGame
                     if (card.Source.ToString() == images[previouscard].ToString()) //Kijkt of de 2 geselecteerde kaarten gelijk zijn aan eklaar
                     {
                         score[speler - 1] += 100; //kent score aan de speler toe die het paar juist raad
-
+                        GeradenKaartjes += 1;
                         geraden = true; //maakt het variabele geraden true zodat de speler die het geraden heeft nog een keer mag
                     }
                     else
@@ -148,11 +150,12 @@ namespace MemoryGame
                 }
                 cardsselected = 0;
                 if(geraden == false) //zorgt ervoor dat de speler gewisseld wordt
-                {
-
+                {            
                     speler = speler == 1 ? 2 : 1;
                 }
+                IsDone();
                 OnUpdate(); //Update de currentplayer en score van bijde spelers
+                
             }
             previouscard = (int)card.Tag;
         }
@@ -179,6 +182,10 @@ namespace MemoryGame
         /// <returns>true or false</returns>
         public bool IsDone()
         {
+            if (GeradenKaartjes == 8)
+            {
+                win = true;
+            }
             return this.win;
         }
     }

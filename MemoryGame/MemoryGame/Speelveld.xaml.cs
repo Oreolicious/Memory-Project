@@ -40,7 +40,7 @@ namespace MemoryGame
             NameInit();
         }
 
-        public void OnUpdate()
+        public async void OnUpdate()
         {
             if (grid.GetCurPlayer() == 1)
             {
@@ -54,6 +54,11 @@ namespace MemoryGame
             }
             Speler1score.Text = grid.GetPlayerScore(0).ToString();
             Speler2score.Text = grid.GetPlayerScore(1).ToString(); ;
+            if (grid.IsDone())
+            {
+                await Task.Delay(1000);
+                this.NavigationService.Navigate(new Win_scherm());
+            }
         }
         public void NameInit()
         {

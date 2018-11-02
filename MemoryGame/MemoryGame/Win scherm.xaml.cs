@@ -27,7 +27,7 @@ namespace MemoryGame
 
         private void NieuwSpelButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Speelveld());
+            this.NavigationService.Navigate(new Invoer_scherm());
         }
 
         private void HighscoreButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
