@@ -30,6 +30,17 @@ namespace MemoryGame
             this.NavigationService.Navigate(new Homepage());
         }
 
+        private void Spelernaam_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         private void StartButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Speelveld Speel = new Speelveld();

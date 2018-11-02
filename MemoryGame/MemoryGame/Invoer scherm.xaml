@@ -72,7 +72,7 @@
                         <Grid.Background>
                             <ImageBrush ImageSource="Images/Invoerbalk.jpeg"/>
                         </Grid.Background>
-                        <TextBox x:Name="Speler1naam" HorizontalAlignment="Left" Height="57" Margin="24,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="American Purpose" FontSize="44" SelectionBrush="{x:Null}" Foreground="#FF2D96A6" MaxLines="1" MaxLength="8">
+                        <TextBox x:Name="Speler1naam" HorizontalAlignment="Left" Height="57" Margin="24,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="American Purpose" FontSize="44" SelectionBrush="{x:Null}" Foreground="#FF2D96A6" MaxLines="1" MaxLength="8" KeyDown="Spelernaam_KeyDown">
                             <TextBox.Template>
                                 <ControlTemplate TargetType="{x:Type TextBox}">
                                     <ScrollViewer Name="PART_ContentHost"/>
@@ -84,7 +84,7 @@
                         <Grid.Background>
                             <ImageBrush ImageSource="Images/Invoerbalk.jpeg"/>
                         </Grid.Background>
-                        <TextBox x:Name="Speler2naam" HorizontalAlignment="Left" Height="57" Margin="24,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="American Purpose" FontSize="44" SelectionBrush="{x:Null}" Foreground="#FF2D96A6" MaxLines="1" MaxLength="8">
+                        <TextBox x:Name="Speler2naam" HorizontalAlignment="Left" Height="57" Margin="24,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="American Purpose" FontSize="44" SelectionBrush="{x:Null}" Foreground="#FF2D96A6" MaxLines="1" MaxLength="8" KeyDown="Spelernaam_KeyDown">
                             <TextBox.Template>
                                 <ControlTemplate TargetType="{x:Type TextBox}">
                                     <ScrollViewer Name="PART_ContentHost"/>
