@@ -80,7 +80,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid x:Name="TimerText" Grid.Column="1" Grid.Row="1">
                     <TextBlock Name="Tijd" VerticalAlignment="Center" HorizontalAlignment="Right" Text="" FontFamily="American Purpose" FontSize="40" Foreground="#ffffff" TextWrapping="Wrap">
-                            00:00
+                            03:00
                         </TextBlock>
                         <Viewbox>
                             <TextBlock Name="Timernaam" VerticalAlignment="Center" HorizontalAlignment="Center" Text="" FontFamily="American Purpose" FontSize="24" Foreground="#A3E4DE" Width="120" TextWrapping="Wrap">
