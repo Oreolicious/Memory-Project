@@ -79,11 +79,14 @@
                     <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid x:Name="TimerText" Grid.Column="1" Grid.Row="1">
-                    <Viewbox>
-                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="" FontFamily="American Purpose" FontSize="24" Foreground="#ffffff" TextWrapping="Wrap" Width="130">
-                            <Run Text="Timer: " Foreground="#A2E3DF"/><Run Text="00:00" />
+                    <TextBlock Name="Tijd" VerticalAlignment="Center" HorizontalAlignment="Right" Text="" FontFamily="American Purpose" FontSize="40" Foreground="#ffffff" TextWrapping="Wrap">
+                            00:00
                         </TextBlock>
-                    </Viewbox>
+                        <Viewbox>
+                            <TextBlock Name="Timernaam" VerticalAlignment="Center" HorizontalAlignment="Center" Text="" FontFamily="American Purpose" FontSize="24" Foreground="#A3E4DE" Width="120" TextWrapping="Wrap">
+                            Timer:
+                            </TextBlock>
+                        </Viewbox>
                 </Grid>
                 <Grid.Background>
                     <ImageBrush ImageSource="assets/timerbuttonSpeelV.png"/>

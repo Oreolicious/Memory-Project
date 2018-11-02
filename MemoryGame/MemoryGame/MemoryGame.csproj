@@ -67,6 +67,7 @@
     <Compile Include="Speelveld.xaml.cs">
       <DependentUpon>Speelveld.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MemoryTimer.cs" />
     <Compile Include="Win scherm.xaml.cs">
       <DependentUpon>Win scherm.xaml</DependentUpon>
     </Compile>
