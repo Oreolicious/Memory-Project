@@ -131,14 +131,8 @@ namespace MemoryGame
                 {
                     if (card.Source.ToString() == images[previouscard].ToString()) //Kijkt of de 2 geselecteerde kaarten gelijk zijn aan eklaar
                     {
-                        if(speler == 1) //kent score aan de speler toe die het paar juist raad
-                        {
-                            score[0] += 100; 
-                        }
-                        else
-                        {
-                            score[1] += 100;
-                        }
+                        score[speler - 1] += 100; //kent score aan de speler toe die het paar juist raad
+
                         geraden = true; //maakt het variabele geraden true zodat de speler die het geraden heeft nog een keer mag
                     }
                     else
@@ -155,14 +149,8 @@ namespace MemoryGame
                 cardsselected = 0;
                 if(geraden == false) //zorgt ervoor dat de speler gewisseld wordt
                 {
-                    if (speler == 1)
-                    {
-                        speler = 2;
-                    }
-                    else
-                    {
-                        speler = 1;
-                    }
+
+                    speler = speler == 1 ? 2 : 1;
                 }
                 OnUpdate(); //Update de currentplayer en score van bijde spelers
             }
