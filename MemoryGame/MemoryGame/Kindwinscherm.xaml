@@ -35,7 +35,7 @@
             <Grid.Background>
                 <ImageBrush ImageSource="Images/wolkKind.png"/>
             </Grid.Background>
-            <Grid x:Name="nieuwspelGrid" Grid.Row="2" Grid.Column="1">
+            <Grid x:Name="nieuwspelGrid" Grid.Row="2" Grid.Column="1" MouseDown="Kinderbutton_MouseDown">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="94*"/>
                     <ColumnDefinition Width="13*"/>
@@ -47,7 +47,7 @@
                 </Grid.Background>
 
             </Grid>
-            <Grid x:Name="buttonHoofdmenu" Grid.Row="1" Grid.Column="1" Margin="8,0,2,0">
+            <Grid x:Name="buttonHoofdmenu" Grid.Row="1" Grid.Column="1" Margin="8,0,2,0" MouseDown="HoofdmenuButtonGrid_MouseDown">
                 <Grid.Background>
                     <ImageBrush ImageSource="Images/hoofdmenuKind.png"/>
                 </Grid.Background>
