@@ -20,7 +20,10 @@ namespace MemoryGame
         private ImageSource[] images = new ImageSource[10]; //array images
         private int previouscard;
         private int cardsselected;
-      
+        private int GeradenKaartjes;
+        private bool win = false;
+        internal Action OnUpdate;
+
 
         public MemoryGridKinderen(Grid grid, int cols, int rows)
         {
@@ -29,6 +32,7 @@ namespace MemoryGame
             this.rows = rows;
             this.previouscard = 0;
             this.cardsselected = 0;
+           
 
             for (int i = 0; i < 10; i++)  //loop om alle kaartjes aan te roepen (werkt alleen nog maar bij 10 kaarten) 
             {
@@ -38,6 +42,7 @@ namespace MemoryGame
             }
             InitializeGameGrid(cols, rows);  //grid aanroepen
             AddImages();
+            GeradenKaartjes = 0;
         }
 
         private void InitializeGameGrid(int cols, int rows) //grid aanmaken en vullen
@@ -109,7 +114,7 @@ namespace MemoryGame
                 {
                     if (card.Source.ToString() == images[previouscard].ToString())
                     {
-
+                        GeradenKaartjes += 1;
                     }
                     else
                     {
@@ -123,11 +128,22 @@ namespace MemoryGame
                     }
                 }
                 cardsselected = 0;
-
-
+                IsDone();
+                OnUpdate(); //Update om te kijken of de game gewonnen is
             }
             previouscard = (int)card.Tag;
         }
-       
+        /// <summary>
+        /// Methode om te kunnen zien of het spel is afgelopen
+        /// </summary>
+        /// <returns>true or false</returns>
+        public bool IsDone()
+        {
+            if (GeradenKaartjes == 5)
+            {
+                win = true;
+            }
+            return this.win;
+        }
     }
 }

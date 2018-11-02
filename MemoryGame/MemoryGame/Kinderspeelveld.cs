@@ -27,9 +27,17 @@ namespace MemoryGame
         MemoryGridKinderen grid;
         public Kinderspeelveld()
         {
-            Invoer_scherm invoer = new Invoer_scherm();
             InitializeComponent();
             grid = new MemoryGridKinderen(GameGrid, NR_OF_COLS, NR_OF_ROWS);
+            grid.OnUpdate += OnUpdate;
+        }
+        public async void OnUpdate()
+        {
+            if (grid.IsDone())
+            {
+                await Task.Delay(1000);
+                this.NavigationService.Navigate(new Kindwinscherm());
+            }
         }
         private void Terugbutton_MouseDown(object sender, MouseEventArgs e)
         {
