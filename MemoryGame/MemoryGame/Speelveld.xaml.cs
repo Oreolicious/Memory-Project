@@ -70,6 +70,12 @@ namespace MemoryGame
             this.Dispatcher.Invoke(() => //uitzoeken
             {
                 Tijd.Text = timer.SpeelveldTijd;
+
+            if (timer.SpeelveldTijd == "00:00")
+                {
+                this.NavigationService.Navigate(new Win_scherm());
+                }
+            
                 //if statement plaatsen timer.speelveldtijd == 00:00 dan terug na winscherm // zonder delay?
             });
         }
