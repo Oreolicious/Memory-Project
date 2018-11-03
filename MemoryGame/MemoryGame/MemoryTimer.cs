@@ -12,7 +12,7 @@ namespace MemoryGame
     {
         private static System.Timers.Timer aTimer;
         private int Tijd;
-        private static int SpelTimer;
+        public int SpelTimer { get; set; }
         public string SpeelveldTijd { get; set; }
         internal Action OnTimerUpdate;
         public MemoryTimer(int Tijd)
@@ -56,6 +56,11 @@ namespace MemoryGame
             OnTimerUpdate();
             Console.WriteLine(SpeelveldTijd);
             SpelTimer -= 1;
+        }
+
+        public void StopTimer()
+        {
+            aTimer.Dispose();
         }
     }
 }

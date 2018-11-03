@@ -25,6 +25,7 @@ namespace MemoryGame
         private string[] namen = new string[2];
         private bool win = false;
         private int GeradenKaartjes;
+        private int Streak;
         internal Action OnUpdate;
 
         /// <summary>
@@ -57,6 +58,7 @@ namespace MemoryGame
             namen[1] = naam_2;
             Console.WriteLine("Name: " + namen[0] + namen[1]);
             GeradenKaartjes = 0;
+            Streak = 0;
         }
         /// <summary>
         /// Maakt de grid rows en columns aan
@@ -137,19 +139,20 @@ namespace MemoryGame
                 {
                     if (card.Source.ToString() == images[previouscard].ToString()) //Kijkt of de 2 geselecteerde kaarten gelijk zijn aan eklaar
                     {
-                        score[speler - 1] += 100; //kent score aan de speler toe die het paar juist raad
+                        score[speler - 1] += 50 * (Streak + 1)+100; //kent score aan de speler toe die het paar juist raad
                         GeradenKaartjes += 1;
                         geraden = true; //maakt het variabele geraden true zodat de speler die het geraden heeft nog een keer mag
+                        Streak++;
                     }
                     else
                     {
                         await Task.Delay(1000); //delay zodat de tweede kaart niet gelijk van het scherm verdwijnt
                         ImageSource back = new BitmapImage(new Uri("assets/Card.png", UriKind.Relative)); //pakt de source van de achterkant van de kaart
-
                         card.Source = back; //draait huidige kaart terug
 
                         Image previousImage = (Image)grid.Children[previouscard]; //draait de vorige kaart terug
                         previousImage.Source = back;
+                        Streak = 0;
                     }
                 }
                 cardsselected = 0;
@@ -178,7 +181,6 @@ namespace MemoryGame
                             }
                         }
                     }
-
                     File.WriteAllLines(file.ToString(), lines.Take(3));
                 }
 

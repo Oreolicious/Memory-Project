@@ -26,9 +26,11 @@ namespace MemoryGame
         private const int NR_OF_ROWS = 2;
         private string Naam1;
         private string Naam2;
+        private int PauseTijd;
         public string TimerTijd { get; set; }
         MemoryGrid grid;
         MemoryTimer timer;
+        Pauze_menu PauseMenu = new Pauze_menu();
         public Speelveld(string naam_1, string naam_2)
         {
             Naam1 = naam_1;
@@ -36,6 +38,7 @@ namespace MemoryGame
             InitializeComponent();
             grid = new MemoryGrid(GameGrid, NR_OF_COLS, NR_OF_ROWS, Naam1, Naam2);
             grid.OnUpdate += OnUpdate;
+            PauseMenu.OnUnpause += OnUnpause;
             timer = new MemoryTimer(180);
             timer.OnTimerUpdate += OnTimerUpdate;
             OnUpdate();
@@ -62,15 +65,17 @@ namespace MemoryGame
             Speler2score.Text = grid.GetPlayerScore(1).ToString(); ;
             if (grid.IsDone())
             {
-                await Task.Delay(1000);
+                await Task.Delay(500);
+                timer.StopTimer();
                 this.NavigationService.Navigate(new Win_scherm());
             }
         }
         public void OnTimerUpdate()
         {
+            Console.WriteLine("OnTimerUpdate() invoked");
             this.Dispatcher.Invoke(() => //uitzoeken
             {
-                Tijd.Text = timer.SpeelveldTijd;
+                this.Tijd.Text = timer.SpeelveldTijd;
                 //if statement plaatsen timer.speelveldtijd == 00:00 dan terug na winscherm // zonder delay?
             });
         }
@@ -82,12 +87,24 @@ namespace MemoryGame
 
         private void Pauzebutton_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Pauze_menu());
+            this.NavigationService.Navigate(PauseMenu);
+            this.Dispatcher.Invoke(() => 
+            {
+                PauseTijd = timer.SpelTimer;
+            });
+            timer.StopTimer();
         }
 
         private void Terugbutton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.NavigationService.Navigate(new Homepage());
+            timer.StopTimer();
+        }
+
+        private void OnUnpause()
+        {
+            timer = new MemoryTimer(PauseTijd);
+            timer.OnTimerUpdate += OnTimerUpdate;
         }
     }
 }

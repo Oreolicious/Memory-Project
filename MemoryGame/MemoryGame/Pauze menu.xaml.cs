@@ -20,6 +20,8 @@ namespace MemoryGame
     /// </summary>
     public partial class Pauze_menu : Page
     {
+        internal Action OnUnpause;
+
         public Pauze_menu()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace MemoryGame
         private void SpelHervattenGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.NavigationService.GoBack();
+            OnUnpause();
         }
 
         private void NaarHoofdmenuGrid_MouseDown(object sender, MouseButtonEventArgs e)
