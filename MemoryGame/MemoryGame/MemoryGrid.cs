@@ -161,23 +161,23 @@ namespace MemoryGame
                     speler = speler == 1 ? 2 : 1;
                 }
 
-                IsDone();
+                IsDone(); //checked of het spel over is
 
-                if (win)
+                if (win) //als het spel over is wordt de highscorelijst aangepast
                 {
-                    var file = new Uri("../../highscore.txt", UriKind.Relative);
-                    List<string> lines = File.ReadAllLines(file.ToString()).ToList();
+                    var file = new Uri("../../highscore.txt", UriKind.Relative); //lijst van highscores wordt als variabele opgeslagen
+                    List<string> lines = File.ReadAllLines(file.ToString()).ToList(); //de lijst wordt verwerkt naar een C# List
 
-                    for (int j = 0; j < 2; j++)
+                    for (int j = 0; j < 2; j++) //2 keer door de loop voor beide spelers
                     {
-                        for (int i = 0; i < 3; i++)
+                        for (int i = 0; i < 3; i++) //3 keer door de loop voor de 3 highscores in de highscore lijst
                         {
-                            string[] entry = lines[i].Split(',');
+                            string[] entry = lines[i].Split(','); //split de score en de naam van elkaar af
 
-                            if (score[j] > Int32.Parse(entry[1]))
+                            if (score[j] > Int32.Parse(entry[1])) //kijkt of de score hoger is dan de opgeslagen score
                             {
-                                lines.Insert(i, namen[j] + "," + score[j].ToString());
-                                break;
+                                lines.Insert(i, namen[j] + "," + score[j].ToString()); //vervangt de score in de highscore lijst
+                                break; //springt uit de loop om te voorkomen dat de score meerde keren wordt geschreven
                             }
                         }
                     }

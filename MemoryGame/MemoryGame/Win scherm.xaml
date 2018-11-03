@@ -43,6 +43,9 @@
                 <Grid.Background>
                     <ImageBrush ImageSource="Images/KleinWitVlak.jpeg"/>
                 </Grid.Background>
+                <TextBlock Name="Winnaar" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="American Purpose" FontSize="40" Foreground="#000000" TextWrapping="Wrap">
+                    Winnaar
+                </TextBlock>
             </Grid>
             <Grid x:Name="GrootWitVlakGrid" Grid.Row="4">
                 <Grid.RowDefinitions>

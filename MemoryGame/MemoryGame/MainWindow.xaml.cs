@@ -23,12 +23,12 @@ namespace MemoryGame
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MyWindow_Loaded;
+            Loaded += MyWindow_Loaded; //Zorgt ervoor dat zodra de window geladen is dat een pagina word geladen
         }
 
         private void MyWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            frame.NavigationService.Navigate(new Homepage());
+            frame.NavigationService.Navigate(new Homepage()); //Zet de Homepage in de main frame
         }
     }
 }

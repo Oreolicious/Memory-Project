@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MemoryGame
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Pauze_menu.xaml
     /// </summary>
     public partial class Pauze_menu : Page
     {
@@ -29,8 +29,8 @@ namespace MemoryGame
 
         private void SpelHervattenGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.GoBack();
-            OnUnpause();
+            this.NavigationService.GoBack(); //gaat terug naar het speelveld met alle gegevens nog opgeslagen
+            OnUnpause(); //Zorgt ervoor dat de timer weer gaat lopen wanneer de game was gepauzeerd
         }
 
         private void NaarHoofdmenuGrid_MouseDown(object sender, MouseButtonEventArgs e)

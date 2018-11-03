@@ -31,6 +31,10 @@ namespace MemoryGame
             grid = new MemoryGridKinderen(GameGrid, NR_OF_COLS, NR_OF_ROWS);
             grid.OnUpdate += OnUpdate;
         }
+
+        /// <summary>
+        /// Functie die elke Update word geroepen en die kijkt of alle kaarten gevonden zijn(een update voor deze functie is wanneer 2 kaarten geselecteerd zijn)
+        /// </summary>
         public async void OnUpdate()
         {
             if (grid.IsDone())
@@ -39,6 +43,7 @@ namespace MemoryGame
                 this.NavigationService.Navigate(new Kindwinscherm());
             }
         }
+
         private void Terugbutton_MouseDown(object sender, MouseEventArgs e)
         {
             this.NavigationService.Navigate(new Homepage());

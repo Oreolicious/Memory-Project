@@ -45,6 +45,11 @@ namespace MemoryGame
             GeradenKaartjes = 0;
         }
 
+        /// <summary>
+        /// Maakt de Grid aan voor alle kaarten
+        /// </summary>
+        /// <param name="cols">Het aantal columns</param>
+        /// <param name="rows">Het aantal rows</param>
         private void InitializeGameGrid(int cols, int rows) //grid aanmaken en vullen
         {
             for (int i = 0; i < rows; i++)
@@ -57,6 +62,9 @@ namespace MemoryGame
             }
         }
 
+        /// <summary>
+        /// Loopt door alle mogelijke posities en verdeeld alle kaarten over het veld met willekeurige afbeelding volgorde
+        /// </summary>
         private void AddImages()
         {
             List<int> positions = new List<int>();
@@ -87,6 +95,12 @@ namespace MemoryGame
                 backgroundImage.MouseDown += new MouseButtonEventHandler(CardClickAsync);  //wanneer er word geklikt gaat hij over naar de methode CardClick
             }
         }
+
+        /// <summary>
+        /// Handeld een click op een kaart af
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void CardClickAsync(object sender, MouseButtonEventArgs e)
         {
             Image card = (Image)sender;

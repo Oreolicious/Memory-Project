@@ -30,24 +30,34 @@ namespace MemoryGame
             this.NavigationService.Navigate(new Homepage());
         }
 
+        /// <summary>
+        /// Methode die het onmogelijk maakt om niet alphabetische characters in te vullen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Spelernaam_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.A && e.Key <= Key.Z) //Vraagt of het alphabetisch is
             {
             }
             else
             {
-                e.Handled = true;
+                e.Handled = true; //Andere characters worden onderschept en worden niet toegelaten
             }
         }
 
+        /// <summary>
+        /// Methode om de variabelen Naam1 en Naam2 van invoerscherm mee te nemen naar het speelveld
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartButtonGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string naam_1, naam_2;
 
             if (Speler1naam.Text == "")
             {
-                naam_1 = "Speler 1";
+                naam_1 = "Speler 1"; //maakt de naam speler 1 als de invoer niks is
             }
             else
             {
@@ -55,7 +65,7 @@ namespace MemoryGame
             }
             if (Speler2naam.Text == "")
             {
-                naam_2 = "Speler 2";
+                naam_2 = "Speler 2"; //maakt de naam speler 1 als de invoer niks is
             }
             else
             {
@@ -63,7 +73,7 @@ namespace MemoryGame
             }
 
             Speelveld Speel = new Speelveld(naam_1, naam_2);
-            this.NavigationService.Navigate(Speel);
+            this.NavigationService.Navigate(Speel); //Navigeerd naar het speelveld
         }
     }
 }

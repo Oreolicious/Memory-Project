@@ -17,7 +17,7 @@ using System.IO;
 namespace MemoryGame
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Highscore_scherm.xaml
     /// </summary>
     public partial class Highscore_scherm : Page
     {
@@ -25,14 +25,14 @@ namespace MemoryGame
         {
             InitializeComponent();
 
-            var file = new Uri("../../highscore.txt", UriKind.Relative);
-            string[] lines = File.ReadAllLines(file.ToString());
+            var file = new Uri("../../highscore.txt", UriKind.Relative); //Pakt de locatie van de highscore lijst
+            string[] lines = File.ReadAllLines(file.ToString()); //Haalt de highscores uit de lijst en stopt die in een C# array
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++) //loop om door de highscore lijst te lopen
             {
-                string[] entry = lines[i].Split(',');
+                string[] entry = lines[i].Split(','); //Split de naam van de score
 
-                switch (i)
+                switch (i) //Schrijft de lijst in volgorde
                 {
                     case 0:
                         score_1.Text = entry[0] + ": " + entry[1];
