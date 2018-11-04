@@ -25,7 +25,7 @@ namespace MemoryGame
         {
             InitializeComponent();
 
-            var file = new Uri("../../highscore.txt", UriKind.Relative); //Pakt de locatie van de highscore lijst
+            var file = new Uri("highscore.txt", UriKind.Relative); //Pakt de locatie van de highscore lijst
             string[] lines = File.ReadAllLines(file.ToString()); //Haalt de highscores uit de lijst en stopt die in een C# array
 
             for (int i = 0; i < 3; i++) //loop om door de highscore lijst te lopen

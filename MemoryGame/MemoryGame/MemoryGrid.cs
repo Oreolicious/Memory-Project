@@ -165,7 +165,7 @@ namespace MemoryGame
 
                 if (win) //als het spel over is wordt de highscorelijst aangepast
                 {
-                    var file = new Uri("../../highscore.txt", UriKind.Relative); //lijst van highscores wordt als variabele opgeslagen
+                    var file = new Uri("highscore.txt", UriKind.Relative); //lijst van highscores wordt als variabele opgeslagen
                     List<string> lines = File.ReadAllLines(file.ToString()).ToList(); //de lijst wordt verwerkt naar een C# List
 
                     for (int j = 0; j < 2; j++) //2 keer door de loop voor beide spelers
